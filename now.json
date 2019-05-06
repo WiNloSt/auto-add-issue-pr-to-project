@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "name": "auto-add-issue-pr-to-project",
+  "alias": "auto-add-issue-pr-to-project",
+  "env": {
+    "APP_ID": "@app-id",
+    "WEBHOOK_SECRET": "@webhook-secret",
+    "PRIVATE_KEY": "@private-key-base64-encoded",
+    "NODE_ENV": "production"
+  },
+  "builds": [{ "src": "index.js", "use": "@now/node" }],
+  "routes": [{ "src": "/", "dest": "/index.js" }]
+}
