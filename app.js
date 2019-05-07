@@ -54,12 +54,10 @@ module.exports = app => {
         if (matchedColumn) {
           app.log('adding card to the project')
 
-          await context.github.projects.createCard({
+          return context.github.projects.createCard({
             column_id: matchedColumn.id,
             ...payloadGenerator(context.payload)
           })
-
-          return 'card added'
         }
       }
     }
