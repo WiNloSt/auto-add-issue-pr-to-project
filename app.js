@@ -14,14 +14,14 @@ module.exports = app => {
     app.log('done')
   })
 
-  app.on('pull_request.opened', async context => {
-    await handleOpen(context, payload => ({
-      content_id: payload.pull_request.id,
-      content_type: 'PullRequest'
-    }))
+  // app.on('pull_request.opened', async context => {
+  //   await handleOpen(context, payload => ({
+  //     content_id: payload.pull_request.id,
+  //     content_type: 'PullRequest'
+  //   }))
 
-    app.log('done')
-  })
+  //   app.log('done')
+  // })
 
   async function handleOpen(context, payloadGenerator) {
     const { projects: targetProjectConfigs } = await context.config('projects.yml', {
